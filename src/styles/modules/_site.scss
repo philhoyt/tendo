@@ -1,0 +1,39 @@
+//
+// Module: site.
+//
+
+@use "../tools/context";
+
+@include context.is(front) {
+	.wp-site-blocks {
+		width: 100%;
+		min-height: 100vh; /* Fallback */
+		min-height: 100dvh; /* Dynamic viewport height for mobile */
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto 1fr auto;
+		grid-template-areas:
+			"header"
+			"main"
+			"footer";
+
+		body.admin-bar & {
+			min-height: calc(100vh - var(--global--admin-bar--height)); /* Fallback */
+			min-height: calc(100dvh - var(--global--admin-bar--height)); /* Dynamic viewport height for mobile */
+		}
+
+		> header {
+			grid-area: header;
+			position: relative;
+			z-index: 2;
+		}
+
+		> main {
+			grid-area: main;
+		}
+
+		> footer {
+			grid-area: footer;
+		}
+	}
+}
