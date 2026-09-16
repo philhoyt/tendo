@@ -1,0 +1,21 @@
+//
+// Utility classes used by the theme's patterns.
+//
+
+// Links inside an element with this class only underline on hover. Used for
+// author names and meta rows, so the comment body is the only underlined text.
+.no-underline a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+// Prefixes an element with a middle-dot separator. Applied to items that are
+// rendered conditionally (the comment Edit link only exists for editors), so
+// the dot appears and disappears with its element instead of leaving an orphan.
+.dot-before::before {
+	content: "·";
+	padding-inline: 0.5em;
+}

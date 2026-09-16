@@ -44,7 +44,8 @@ No. Tendo is a block theme and requires the Site Editor.
 * Rebuilt on theme.json version 3 with a full set of layout, spacing, typography, and border settings.
 * Templates are now thin shells composed from translatable PHP patterns.
 * Added a neutral default palette. The original orange look is available as the Tangerine color preset.
-* Added Search, Post Navigation, Comments, and No Results patterns.
+* Added Search, Post Navigation, Comments, and No Results patterns. Comments have a quiet heading, a single author line, and the comment text in a filled block.
+* Post lists show a comment count link when a post has comments.
 * Added the Striped separator style as a block style variation, plus Contrast section and Badge post-terms styles.
 * Added Serif, Sans, and Mono typography presets using system fonts.
 * Added Posts Grid and Keep Reading patterns; single posts now end with Keep Reading.
