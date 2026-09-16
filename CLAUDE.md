@@ -134,9 +134,11 @@ The `--include` paths cover both PHP source and any patterns/templates that migh
 ### Tendo specifics
 
 - Default palette is neutral (gray/charcoal on white). The theme's original orange look ships as the **Tangerine** color preset in `styles/colors/`, alongside Chill, Lavender, and Moss. Presets set only colors, so they surface under Styles → Colors. Every preset uses `tertiary` as the page background (as 1.x did); without that, a preset is nearly indistinguishable from the default because nothing else in the theme uses `primary` or `tertiary`.
-- Body text is Courier New (`courier-new`); headings, site title, navigation, and buttons are Arial (`arial-helvetica`). Both are system stacks; no font files are bundled.
+- Body text is Courier New (`courier-new`); headings, site title, navigation, and buttons are Arial (`arial-helvetica`). Both are system stacks; no font files are bundled. `styles/typography/` holds Serif, Sans, and Mono presets that also use system stacks only; a preset must redeclare every family it references because a typography preset replaces the theme's `fontFamilies` list.
+- Block style variations in `styles/block/`: `striped` (separator), `section-contrast` (group/columns dark band with matching heading, link, and button colors; Info Card uses it), and `post-terms-badge`.
 - Spacing slugs are `20`–`60`; font-size slugs are `small`, `base`, `medium`, `large`, `x-large`, `xx-large`.
 - `--wp--custom--rule` and `--wp--custom--wash` are palette-agnostic `color-mix()` tokens for hairlines and light fills. Use them instead of a palette color where the element must work on every preset.
 - Block style variations live in `styles/block/*.json` (WordPress 6.6+), not in `register_block_style()` calls.
+- `.github/blueprint.json` powers the Playground demo link in the README; it installs the `tendo.zip` asset from the GitHub release, because the repo itself has no built `dist/`.
 - Releases: push a `MAJOR.MINOR.PATCH` tag; `.github/workflows/release.yml` builds and attaches the zip. WordPress.org themes are uploaded manually from that zip. `.github/workflows/ci.yml` lints, builds, and smoke-tests every push.
 - `templates/blank.html` and `templates/page-no-title.html` are custom templates registered in `theme.json`. There is deliberately no `front-page.html` so a "latest posts" front page falls through to `index.html`.

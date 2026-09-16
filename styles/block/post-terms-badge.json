@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "post-terms-badge",
+  "title": "Badge",
+  "blockTypes": ["core/post-terms"],
+  "styles": {
+    "css": "display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem; & .wp-block-post-terms__separator { display: none; } & .wp-block-post-terms__prefix { margin-inline-end: 0.25rem; }",
+    "typography": {
+      "fontSize": "var(--wp--preset--font-size--small)"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "background": "var(--wp--custom--wash)",
+          "text": "var(--wp--preset--color--contrast)"
+        },
+        "typography": {
+          "textDecoration": "none"
+        },
+        "spacing": {
+          "padding": {
+            "top": "0.125rem",
+            "right": "0.5rem",
+            "bottom": "0.125rem",
+            "left": "0.5rem"
+          }
+        },
+        "css": "display: inline-block; border: 1px solid var(--wp--custom--rule);",
+        ":hover": {
+          "color": {
+            "background": "var(--wp--preset--color--contrast)",
+            "text": "var(--wp--preset--color--base)"
+          },
+          "typography": {
+            "textDecoration": "none"
+          }
+        }
+      }
+    }
+  }
+}

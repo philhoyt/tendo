@@ -1,0 +1,83 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Mono",
+  "slug": "mono",
+  "settings": {
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Courier New\", Courier, \"Lucida Sans Typewriter\", \"Lucida Typewriter\", monospace",
+          "name": "Courier New",
+          "slug": "courier-new"
+        },
+        {
+          "fontFamily": "Arial, \"Helvetica Neue\", Helvetica, sans-serif",
+          "name": "Arial",
+          "slug": "arial-helvetica"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--courier-new)",
+      "lineHeight": "1.6"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--courier-new)",
+          "fontWeight": "700"
+        }
+      },
+      "button": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--courier-new)"
+        }
+      }
+    },
+    "blocks": {
+      "core/site-title": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--courier-new)"
+        }
+      },
+      "core/post-title": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--courier-new)"
+        }
+      },
+      "core/query-title": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--courier-new)"
+        }
+      },
+      "core/pullquote": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--courier-new)"
+        }
+      },
+      "core/navigation": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--courier-new)"
+        }
+      },
+      "core/comment-author-name": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--courier-new)"
+        }
+      },
+      "core/post-navigation-link": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--courier-new)"
+        }
+      },
+      "core/query-pagination": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--courier-new)"
+        }
+      }
+    }
+  }
+}

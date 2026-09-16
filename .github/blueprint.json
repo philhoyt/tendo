@@ -1,0 +1,25 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/",
+  "login": true,
+  "steps": [
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "Tendo",
+        "blogdescription": "A clean and minimalist block theme",
+        "permalink_structure": "/%postname%/"
+      }
+    },
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://github-proxy.com/proxy/?repo=philhoyt/tendo&release=2.0.0&asset=tendo.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    }
+  ]
+}

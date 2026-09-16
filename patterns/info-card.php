@@ -6,7 +6,7 @@
  * Keywords: info, card, bio, about, media, text
  * Block Types: core/media-text
  * Viewport width: 1280
- * Description: A dark, wide card with a heading, short text, an outline button, and an image on the right.
+ * Description: A wide card in the Contrast section style with a heading, short text, an outline button, and an image on the right.
  *
  * @package tendo
  */
@@ -16,8 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<!-- wp:group {"metadata":{"name":"Info Card"},"align":"wide","style":{"spacing":{"blockGap":"0","padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"contrast","textColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide has-base-color has-contrast-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:media-text {"align":"wide","mediaPosition":"right"} -->
+<!-- wp:group {"metadata":{"name":"Info Card"},"align":"wide","className":"is-style-section-contrast","style":{"spacing":{"blockGap":"0","padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide is-style-section-contrast" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:media-text {"align":"wide","mediaPosition":"right"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile"><div class="wp-block-media-text__content"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0"}}}} -->
 <h2 class="wp-block-heading" style="margin-top:0"><?php esc_html_e( 'A short introduction', 'tendo' ); ?></h2>
 <!-- /wp:heading -->

@@ -4,6 +4,7 @@ Tendo is a clean and minimalist block theme built for the WordPress Site Editor.
 
 - Listed on WordPress.org: https://wordpress.org/themes/tendo/
 - Built on the [WP-SETS](https://github.com/philhoyt/wp-site-editor-theme-scaffold) theme scaffold
+- [Try it in WordPress Playground](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/philhoyt/tendo/master/.github/blueprint.json) (installs the latest release zip, so it works once 2.0.0 is published)
 
 ## Requirements
 

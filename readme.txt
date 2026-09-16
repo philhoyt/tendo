@@ -15,10 +15,11 @@ Tendo is a clean and minimalist block theme built for the WordPress Site Editor.
 Tendo is a clean and minimalist block theme built for the WordPress Site Editor. Monospaced body text is paired with bold sans-serif headings on a quiet, neutral canvas. Switch the palette from the Styles panel, pick a page template, and use the included block patterns to shape your content.
 
 * Four color presets: Tangerine, Chill, Lavender, and Moss, on top of the neutral default.
-* System fonts only. Nothing is downloaded from a third party.
+* Three typography presets: Serif, Sans, and Mono. System fonts only; nothing is downloaded from a third party.
 * Blank and Page (No Title) templates for landing pages.
-* Info Card and Links in Bio block patterns.
-* A striped style for the Separator block.
+* Info Card, Links in Bio, Posts Grid, and Keep Reading block patterns.
+* Block styles: a striped Separator, a Contrast section style for Groups and Columns, and Badge post terms.
+* A header set to Sticky in the editor stays pinned, clear of the admin bar.
 * Translation ready. All template strings live in PHP patterns.
 
 == Installation ==
@@ -44,7 +45,10 @@ No. Tendo is a block theme and requires the Site Editor.
 * Templates are now thin shells composed from translatable PHP patterns.
 * Added a neutral default palette. The original orange look is available as the Tangerine color preset.
 * Added Search, Post Navigation, Comments, and No Results patterns.
-* Added the Striped separator style as a block style variation.
+* Added the Striped separator style as a block style variation, plus Contrast section and Badge post-terms styles.
+* Added Serif, Sans, and Mono typography presets using system fonts.
+* Added Posts Grid and Keep Reading patterns; single posts now end with Keep Reading.
+* Sticky header support and a reduced-motion-aware page crossfade.
 * Added a compiled front-end and editor stylesheet with accessible focus states.
 * Raised the minimum requirements to WordPress 6.6 and PHP 7.4.
 
