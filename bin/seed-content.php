@@ -160,6 +160,25 @@ $content = ''
 	. '<!-- wp:social-links --><ul class="wp-block-social-links"><!-- wp:social-link {"url":"#","service":"wordpress"} /--><!-- wp:social-link {"url":"#","service":"mastodon"} /--></ul><!-- /wp:social-links -->';
 tendo_seed_post( array( 'post_type' => 'page', 'post_title' => 'Block test 2', 'post_name' => 'block-test-2', 'post_content' => $content ) );
 
+// Child pages so the page-list navigation renders submenus (three levels deep).
+$parents = array( 'about' => array( 'Team', 'History', 'Press kit' ), 'patterns' => array( 'Cards', 'Grids' ) );
+foreach ( $parents as $slug => $children ) {
+	$parent = get_page_by_path( $slug );
+	if ( ! $parent ) { continue; }
+	foreach ( $children as $title ) {
+		$child_slug = sanitize_title( $title );
+		if ( get_posts( array( 'post_type' => 'page', 'name' => $child_slug, 'post_status' => 'any', 'posts_per_page' => 1 ) ) ) { continue; }
+		$id = wp_insert_post( array( 'post_type' => 'page', 'post_title' => $title, 'post_name' => $child_slug, 'post_parent' => $parent->ID, 'post_status' => 'publish', 'post_author' => 1, 'post_content' => '<!-- wp:paragraph --><p>' . esc_html( $title ) . ' is a child of ' . esc_html( $parent->post_title ) . '.</p><!-- /wp:paragraph -->' ) );
+		WP_CLI::log( "created $title (#$id) under $slug" );
+	}
+}
+// A third level under Team to see deep nesting.
+$team = get_page_by_path( 'about/team' );
+if ( $team && ! get_page_by_path( 'about/team/leads' ) ) {
+	wp_insert_post( array( 'post_type' => 'page', 'post_title' => 'Leads', 'post_name' => 'leads', 'post_parent' => $team->ID, 'post_status' => 'publish', 'post_author' => 1, 'post_content' => '<!-- wp:paragraph --><p>Third level.</p><!-- /wp:paragraph -->' ) );
+	WP_CLI::log( 'created Leads under Team' );
+}
+
 // Site settings.
 update_option( 'blogdescription', 'A clean and minimalist block theme' );
 if ( ! get_option( 'permalink_structure' ) ) {

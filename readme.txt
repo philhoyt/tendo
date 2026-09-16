@@ -50,6 +50,7 @@ No. Tendo is a block theme and requires the Site Editor.
 * Added Serif, Sans, and Mono typography presets using system fonts.
 * Added Posts Grid and Keep Reading patterns; single posts now end with Keep Reading.
 * Sticky header support and a reduced-motion-aware page crossfade.
+* Styled navigation dropdowns and a full-screen contrast panel for the mobile menu, with clear submenu levels.
 * Added a compiled front-end and editor stylesheet with accessible focus states.
 * Raised the minimum requirements to WordPress 6.6 and PHP 7.4.
 

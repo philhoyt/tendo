@@ -1,14 +1,14 @@
 //
 // Navigation block styles.
 //
+// Two contexts: the desktop dropdown (submenu container floating under a
+// top-level item) and the overlay (the full-screen menu behind the hamburger).
+// Core styles both with fairly specific selectors and !important in places,
+// so several rules below need !important to take effect.
+//
 
-// The responsive overlay is rendered outside the normal flow, so it needs
-// explicit padding to line up with the root padding.
-.wp-block-navigation__responsive-container {
-	&.is-menu-open {
-		padding: var(--wp--style--root--padding-left, var(--wp--preset--spacing--40));
-	}
-}
+$content: ".wp-block-navigation-item__content";
+$submenu: ".wp-block-navigation__submenu-container";
 
 // Give submenu items room so the focus outline is visible.
 .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
@@ -16,11 +16,145 @@
 }
 
 // Push the outline away from the text on top-level items.
-.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
+.wp-block-navigation .wp-block-navigation-item #{$content} {
 	outline-offset: 4px;
 }
 
 // Keep the outline inside the submenu container.
-.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+.wp-block-navigation .wp-block-navigation-item ul#{$submenu} #{$content} {
 	outline-offset: 0;
+}
+
+// ---------------------------------------------------------------------------
+// Desktop dropdown.
+//
+// A contrast panel to match the overlay: black, square, white italic links,
+// and a short slide-in on top of core's opacity fade.
+// ---------------------------------------------------------------------------
+.wp-block-navigation__responsive-container:not(.is-menu-open) {
+	.has-child #{$submenu} {
+		min-width: 12rem;
+		padding: 0.5rem 0;
+		border: 0;
+		border-radius: 0;
+		background-color: var(--wp--preset--color--contrast) !important;
+		color: var(--wp--preset--color--base) !important;
+		transform: translateY(0.5rem);
+		transition:
+			opacity 0.15s ease-out,
+			transform 0.15s ease-out,
+			visibility 0.15s;
+
+		#{$content} {
+			padding: 0.5rem 1.25rem;
+			color: inherit !important;
+			font-size: var(--wp--preset--font-size--base);
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+				text-underline-offset: 0.2em;
+			}
+		}
+
+		// The chevron on items that open a nested panel.
+		.wp-block-navigation__submenu-icon {
+			color: inherit;
+			margin-right: 1rem;
+		}
+
+		// Nested panels open to the side (core mirrors the side for
+		// right-justified menus), level with their parent row. They keep the
+		// same downward slide so the direction never fights the mirroring.
+		#{$submenu} {
+			margin-top: -0.5rem;
+		}
+	}
+
+	// Open states: core reveals the panel on hover/focus, or on click when the
+	// toggle is expanded. Land the slide in the same cases.
+	.has-child:hover > #{$submenu},
+	.has-child:focus-within > #{$submenu},
+	.has-child .wp-block-navigation-submenu__toggle[aria-expanded="true"] + #{$submenu} {
+		transform: none;
+	}
+
+	// Underline the parent item while its panel is open.
+	.has-child:hover > #{$content},
+	.has-child:focus-within > #{$content} {
+		text-decoration: underline;
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Overlay.
+// ---------------------------------------------------------------------------
+.wp-block-navigation__responsive-container.is-menu-open {
+	// Tendo's root padding has no top or bottom, and core reads those
+	// variables for the overlay, so set the overlay's own padding explicitly.
+	padding: var(--wp--preset--spacing--50) var(--wp--preset--spacing--40) !important;
+
+	// A contrast panel works under every color preset and reads as a
+	// deliberate surface rather than a white sheet over a tinted page.
+	background-color: var(--wp--preset--color--contrast) !important;
+	color: var(--wp--preset--color--base) !important;
+
+	a,
+	#{$content} {
+		color: inherit !important;
+	}
+
+	// The header justifies the menu to the right, and core carries that into
+	// the overlay as align-items: flex-end on the content wrapper, the list,
+	// and every item. The overlay is a list, so start everything at the left.
+	.wp-block-navigation__responsive-container-content,
+	.wp-block-navigation__container,
+	.wp-block-page-list {
+		width: 100%;
+		align-items: flex-start !important;
+		gap: 0 !important;
+	}
+
+	// Core justifies each item to the end for right-justified menus; the
+	// overlay list should read from the left.
+	.wp-block-navigation-item {
+		width: 100%;
+		justify-content: flex-start !important;
+		align-items: flex-start !important;
+		gap: 0 !important;
+		margin-bottom: 0;
+		text-align: left;
+	}
+
+	#{$content} {
+		padding: 0.5rem 0 !important;
+		font-size: var(--wp--preset--font-size--x-large);
+		line-height: var(--wp--custom--line-height--small);
+	}
+
+	// Submenus: indented, ruled on the left, smaller type.
+	#{$submenu} {
+		gap: 0 !important;
+		margin: 0.25rem 0 0.5rem !important;
+		padding: 0 0 0 var(--wp--preset--spacing--30) !important;
+		border-left: 1px solid color-mix(in srgb, currentcolor 35%, transparent);
+		align-items: flex-start !important;
+
+		#{$content} {
+			padding: 0.375rem 0 !important;
+			font-size: var(--wp--preset--font-size--medium);
+		}
+
+		#{$submenu} #{$content} {
+			font-size: var(--wp--preset--font-size--base);
+		}
+	}
+
+	.wp-block-navigation__responsive-container-close {
+		top: var(--wp--preset--spacing--30);
+		right: var(--wp--preset--spacing--40);
+		padding: 0;
+		color: inherit;
+	}
 }
