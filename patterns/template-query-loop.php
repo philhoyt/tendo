@@ -26,6 +26,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:pattern {"slug":"tendo/hidden-post-meta"} /-->
 
+<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"tendo/comments-cta"}},"name":"Comment count"},"className":"tendo-comment-count","fontSize":"small"} -->
+<p class="tendo-comment-count has-small-font-size"><?php esc_html_e( 'Comments', 'tendo' ); ?></p>
+<!-- /wp:paragraph -->
+
 <!-- wp:separator {"className":"is-style-wide"} -->
 <hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
 <!-- /wp:separator --></div>

@@ -15,3 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Theme setup.
  */
 require get_template_directory() . '/inc/setup.php';
+
+/**
+ * Block bindings.
+ */
+require get_template_directory() . '/inc/block-bindings.php';

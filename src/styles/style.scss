@@ -90,6 +90,15 @@ p {
 }
 
 /*
+ * The comment count paragraph is bound to tendo/comments-cta, which returns
+ * nothing for posts without comments; hide the empty paragraph so it leaves
+ * no gap.
+ */
+.tendo-comment-count:empty {
+	display: none;
+}
+
+/*
  * Keep the page-list fallback navigation in the header horizontal when the
  * navigation block has not been saved yet.
  */
