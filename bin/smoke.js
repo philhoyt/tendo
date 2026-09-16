@@ -59,7 +59,10 @@ function bootPlayground() {
 			`--mount=${ROOT}:/wordpress/wp-content/themes/tendo`,
 			`--blueprint=${blueprintPath}`,
 		],
-		{ stdio: ["ignore", "pipe", "pipe"] }
+		// detached puts npx and the Playground server in their own process group so
+		// stopPlayground() can kill all of them; a plain SIGTERM to npx leaves the
+		// server running, and its open pipes then keep this process alive forever.
+		{ stdio: ["ignore", "pipe", "pipe"], detached: true }
 	);
 
 	const ready = new Promise((resolve, reject) => {
@@ -84,6 +87,22 @@ function bootPlayground() {
 	});
 
 	return { child, ready, blueprintPath };
+}
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function stopPlayground(child) {
+	for (const signal of ["SIGTERM", "SIGKILL"]) {
+		try {
+			process.kill(-child.pid, signal);
+		} catch {
+			return;
+		}
+		await sleep(2000);
+		if (child.exitCode !== null || child.signalCode !== null) {
+			return;
+		}
+	}
 }
 
 async function run() {
@@ -150,7 +169,7 @@ async function run() {
 
 		await browser.close();
 	} finally {
-		child.kill("SIGTERM");
+		await stopPlayground(child);
 		fs.rmSync(blueprintPath, { force: true });
 	}
 
@@ -159,6 +178,8 @@ async function run() {
 		process.exit(1);
 	}
 	console.log("\nAll templates rendered cleanly.");
+	// Exit explicitly: any straggling child pipe would otherwise keep Node alive.
+	process.exit(0);
 }
 
 run().catch((error) => {
