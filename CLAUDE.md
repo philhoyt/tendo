@@ -23,6 +23,7 @@ npm run format:check   # Check formatting without writing
 
 # Utilities
 npm run screenshot     # Capture screenshot.png of the local site (Puppeteer)
+npm run test:smoke     # Boot WordPress Playground and check the main templates render cleanly
 npm run packages-update # Update @wordpress/* packages
 ```
 
@@ -137,4 +138,5 @@ The `--include` paths cover both PHP source and any patterns/templates that migh
 - Spacing slugs are `20`–`60`; font-size slugs are `small`, `base`, `medium`, `large`, `x-large`, `xx-large`.
 - `--wp--custom--rule` and `--wp--custom--wash` are palette-agnostic `color-mix()` tokens for hairlines and light fills. Use them instead of a palette color where the element must work on every preset.
 - Block style variations live in `styles/block/*.json` (WordPress 6.6+), not in `register_block_style()` calls.
+- Releases: push a `MAJOR.MINOR.PATCH` tag; `.github/workflows/release.yml` builds and attaches the zip. WordPress.org themes are uploaded manually from that zip. `.github/workflows/ci.yml` lints, builds, and smoke-tests every push.
 - `templates/blank.html` and `templates/page-no-title.html` are custom templates registered in `theme.json`. There is deliberately no `front-page.html` so a "latest posts" front page falls through to `index.html`.

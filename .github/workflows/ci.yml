@@ -1,0 +1,74 @@
+name: CI
+
+on:
+  push:
+    branches: [master, version/two]
+  pull_request:
+
+jobs:
+  lint-and-build:
+    name: Lint and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          tools: composer
+          coverage: none
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Install Composer dependencies
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Build
+        run: npm run build
+
+      - name: Stylelint
+        run: npm run lint:scss
+
+      - name: ESLint
+        run: npm run lint:js
+
+      - name: Prettier
+        run: npm run format:check
+
+      - name: PHP CodeSniffer
+        run: composer run-script lint
+
+      - name: PHPStan
+        run: composer run-script analyse
+
+      - name: Validate theme.json files
+        run: |
+          for f in theme.json styles/colors/*.json styles/block/*.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$f', 'utf8'))" && echo "ok $f"
+          done
+
+  smoke:
+    name: Smoke test in Playground
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Boot Playground and visit the main templates
+        run: npm run test:smoke

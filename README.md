@@ -24,10 +24,19 @@ Linting and formatting:
 
 ```bash
 npm run lint:scss
+npm run lint:js
 npm run lint:php
 composer analyse
 npm run format
 ```
+
+Smoke test (boots WordPress Playground with the theme, visits the main templates, and fails on PHP or console errors):
+
+```bash
+npm run test:smoke
+```
+
+GitHub Actions runs the linters, the build, and the smoke test on every push and pull request.
 
 ## Structure
 
@@ -49,13 +58,23 @@ Regenerate the POT file after changing user-facing strings:
 wp i18n make-pot . languages/tendo.pot --include="templates,parts,patterns,inc,functions.php,style.css,theme.json,styles"
 ```
 
-## Packaging
+## Releasing
 
-`.distignore` excludes development files. Build a release zip with:
+1. Bump the version in `style.css`, `readme.txt` (Stable tag), and `package.json`, and add a changelog entry to `readme.txt`.
+2. Commit, then tag and push the tag:
+
+   ```bash
+   git tag 2.0.0 && git push origin 2.0.0
+   ```
+
+The release workflow builds the theme, packages it with `wp dist-archive` (honouring `.distignore`), and attaches `tendo.zip` to a GitHub release. Upload that zip through the WordPress.org theme upload form.
+
+To build the zip locally instead:
 
 ```bash
 npm run build
-wp dist-archive . ../tendo.zip
+wp package install "wp-cli/dist-archive-command:^3.1"
+wp dist-archive . ../tendo.zip --plugin-dirname=tendo
 ```
 
 ## License

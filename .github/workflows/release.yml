@@ -1,0 +1,68 @@
+# Builds the theme and attaches a distributable zip to a GitHub release
+# whenever a version tag is pushed. WordPress.org themes are submitted
+# through the theme upload form, so the zip from the release is what you
+# upload there.
+#
+# To cut a release: bump the version in style.css, readme.txt (Stable tag),
+# and package.json, add a changelog entry, commit, then:
+#   git tag 2.0.0 && git push origin 2.0.0
+name: Release
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish zip
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          tools: wp-cli
+          coverage: none
+
+      - name: Check the tag matches the theme version
+        run: |
+          version=$(sed -n 's/^Version: *//p' style.css | tr -d '\r')
+          if [ "$version" != "$GITHUB_REF_NAME" ]; then
+            echo "style.css says $version but the tag is $GITHUB_REF_NAME"
+            exit 1
+          fi
+          stable=$(sed -n 's/^Stable tag: *//p' readme.txt | tr -d '\r')
+          if [ "$stable" != "$GITHUB_REF_NAME" ]; then
+            echo "readme.txt Stable tag says $stable but the tag is $GITHUB_REF_NAME"
+            exit 1
+          fi
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Install the dist-archive command
+        run: wp package install "wp-cli/dist-archive-command:^3.1"
+
+      - name: Create the theme zip
+        run: wp dist-archive . "$RUNNER_TEMP/tendo.zip" --plugin-dirname=tendo
+
+      - name: List the zip contents
+        run: unzip -l "$RUNNER_TEMP/tendo.zip"
+
+      - uses: softprops/action-gh-release@v3
+        with:
+          files: ${{ runner.temp }}/tendo.zip
+          generate_release_notes: true

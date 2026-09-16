@@ -1,5 +1,6 @@
-# Version control
+# Version control and packaging
 .git
+.distignore
 .gitignore
 .gitattributes
 .github
@@ -25,6 +26,10 @@ src
 plans
 CLAUDE.md
 README.md
+
+# Empty JS stubs and source maps emitted next to the compiled CSS
+dist/css/*.js
+*.map
 
 # OS files
 .DS_Store

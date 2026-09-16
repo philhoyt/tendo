@@ -28,10 +28,10 @@ input:where([type="email"], [type="number"], [type="password"], [type="search"],
 // the active color preset win instead of these defaults.
 // Navigation toggles are excluded because they have their own styles.
 :where(
-button:not(.wp-block-navigation__responsive-container-open, .wp-block-navigation__responsive-container-close),
-input[type="button"],
-input[type="submit"],
-input[type="reset"]
+	button:not(.wp-block-navigation__responsive-container-open, .wp-block-navigation__responsive-container-close),
+	input[type="button"],
+	input[type="submit"],
+	input[type="reset"]
 ) {
 	color: var(--wp--preset--color--base);
 	background-color: var(--wp--preset--color--secondary);

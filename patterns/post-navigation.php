@@ -9,6 +9,10 @@
  * @package tendo
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 ?>
 <!-- wp:group {"tagName":"nav","metadata":{"name":"Post Navigation"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|30","margin":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"ariaLabel":"<?php esc_attr_e( 'Post navigation', 'tendo' ); ?>","layout":{"type":"default"}} -->
 <nav class="wp-block-group alignwide" aria-label="<?php esc_attr_e( 'Post navigation', 'tendo' ); ?>" style="margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--50)"><!-- wp:separator {"className":"is-style-wide"} -->
