@@ -1,16 +1,19 @@
 //
 // Form element styles.
 //
+// theme.json styles the textInput, select, and button elements, but native
+// controls outside of blocks (comment form, search widgets, plugins) don't
+// always carry the element classes. Map the same tokens onto them here.
+//
 
-// Text inputs and textareas
 textarea,
 select,
 input:where([type="email"], [type="number"], [type="password"], [type="search"], [type="text"], [type="tel"], [type="url"]) {
 	line-height: normal;
-	caret-color: var(--wp--preset--color--tertiary);
+	caret-color: var(--wp--preset--color--contrast);
 
 	&:focus {
-		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--tertiary);
+		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--contrast);
 		outline-offset: var(--wp--custom--outline--offset);
 	}
 
@@ -19,30 +22,37 @@ input:where([type="email"], [type="number"], [type="password"], [type="search"],
 	}
 }
 
-// Map button element styles from theme.json to button and input button types.
-// Exclude buttons within the navigation block as they have their own styles.
-button:not(.wp-block-navigation__responsive-container-open):not(.wp-block-navigation__responsive-container-close),
+// Native buttons pick up the theme.json button element styles as a fallback.
+// Wrapped in :where() so the rule has zero specificity: wherever core adds the
+// .wp-element-button class (comment form, search block) the global styles for
+// the active color preset win instead of these defaults.
+// Navigation toggles are excluded because they have their own styles.
+:where(
+button:not(.wp-block-navigation__responsive-container-open, .wp-block-navigation__responsive-container-close),
 input[type="button"],
 input[type="submit"],
-input[type="reset"] {
+input[type="reset"]
+) {
 	color: var(--wp--preset--color--base);
-	background-color: var(--wp--preset--color--contrast);
-	padding-top: var(--wp--preset--spacing--30);
-	padding-right: var(--wp--preset--spacing--50);
-	padding-bottom: var(--wp--preset--spacing--30);
-	padding-left: var(--wp--preset--spacing--50);
-	font-size: var(--wp--preset--font-size--medium);
-	font-weight: 600;
+	background-color: var(--wp--preset--color--secondary);
+	border: 0;
+	border-radius: 0;
+	padding: 0.75rem 1.25rem;
+	font-family: var(--wp--preset--font-family--arial-helvetica);
+	font-size: var(--wp--preset--font-size--base);
+	font-weight: 700;
+	line-height: var(--wp--custom--line-height--small);
+	cursor: pointer;
 
 	&:hover {
-		background-color: var(--wp--preset--color--contrast-dark);
+		background-color: var(--wp--preset--color--contrast);
 		color: var(--wp--preset--color--base);
 	}
 
 	&:focus {
-		background-color: var(--wp--preset--color--contrast-dark);
+		background-color: var(--wp--preset--color--contrast);
 		color: var(--wp--preset--color--base);
-		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--tertiary);
+		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--contrast);
 		outline-offset: var(--wp--custom--outline--offset);
 	}
 

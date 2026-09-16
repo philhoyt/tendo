@@ -1,0 +1,83 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Lavender",
+  "settings": {
+    "color": {
+      "duotone": [
+        {
+          "colors": ["#000000", "#ffffff"],
+          "name": "Black and white",
+          "slug": "duotone-1"
+        },
+        {
+          "colors": ["#896BAD", "#D4D1E4"],
+          "name": "Secondary and tertiary",
+          "slug": "duotone-2"
+        }
+      ],
+      "palette": [
+        {
+          "color": "#ffffff",
+          "name": "Base",
+          "slug": "base"
+        },
+        {
+          "color": "#000000",
+          "name": "Contrast",
+          "slug": "contrast"
+        },
+        {
+          "color": "#EE82EE",
+          "name": "Primary",
+          "slug": "primary"
+        },
+        {
+          "color": "#896BAD",
+          "name": "Secondary",
+          "slug": "secondary"
+        },
+        {
+          "color": "#D4D1E4",
+          "name": "Tertiary",
+          "slug": "tertiary"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--tertiary)",
+      "text": "var(--wp--preset--color--contrast)"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--contrast)"
+        },
+        ":active": {
+          "color": {
+            "text": "var(--wp--preset--color--contrast)"
+          }
+        }
+      },
+      "button": {
+        "color": {
+          "background": "var(--wp--preset--color--secondary)",
+          "text": "var(--wp--preset--color--contrast)"
+        },
+        ":active": {
+          "color": {
+            "background": "var(--wp--preset--color--secondary)",
+            "text": "var(--wp--preset--color--contrast)"
+          }
+        },
+        ":visited": {
+          "color": {
+            "text": "var(--wp--preset--color--contrast)"
+          }
+        }
+      }
+    }
+  }
+}

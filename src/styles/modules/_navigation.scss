@@ -2,14 +2,25 @@
 // Navigation block styles.
 //
 
-// Ensure navigation overlay respects root padding.
-// The overlay container is rendered outside the normal flow,
-// so it needs explicit padding to match root spacing.
-/* stylelint-disable-next-line selector-class-pattern */
+// The responsive overlay is rendered outside the normal flow, so it needs
+// explicit padding to line up with the root padding.
 .wp-block-navigation__responsive-container {
-	// Apply root padding to overlay menu.
 	&.is-menu-open {
-		padding: var(--wp--style--root--padding-left, var(--wp--preset--spacing--50));
+		padding: var(--wp--style--root--padding-left, var(--wp--preset--spacing--40));
 	}
 }
 
+// Give submenu items room so the focus outline is visible.
+.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
+	margin-bottom: 3px;
+}
+
+// Push the outline away from the text on top-level items.
+.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
+	outline-offset: 4px;
+}
+
+// Keep the outline inside the submenu container.
+.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	outline-offset: 0;
+}

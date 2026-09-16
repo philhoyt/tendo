@@ -1,15 +1,15 @@
 /*
 Theme Name: Tendo
-Theme URI: https://github.com/philhoyt/wp-site-editor-theme-scaffold
+Theme URI: https://github.com/philhoyt/tendo
 Author: Phil Hoyt
 Author URI: https://philhoyt.com/
-Description: A custom WordPress Site Editor theme.
-Requires at least: 6.0
-Tested up to: 6.8
+Description: Tendo is a clean and minimalist block theme built for the WordPress Site Editor. Monospaced body text is paired with bold sans-serif headings on a quiet, neutral canvas. Switch the palette from the Styles panel, pick a page template, and use the included block patterns to shape your content.
+Requires at least: 6.6
+Tested up to: 7.1
 Requires PHP: 7.4
 Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: tendo
-Tags: full-site-editing, 
+Tags: blog, one-column, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, block-patterns, block-styles, style-variations, template-editing, threaded-comments, translation-ready, wide-blocks
 */

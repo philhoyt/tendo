@@ -1,35 +1,445 @@
-# Copyright (C) 2024 Tendo
-# This file is distributed under the same license as the Tendo package.
+# Copyright (C) 2026 Phil Hoyt
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Tendo\n"
+"Project-Id-Version: Tendo 2.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/tendo\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-19 23:01+0000\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-09-16T15:09:08+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: tendo\n"
 
-#: style.css:2
+#. Theme Name of the theme
+#: style.css
 msgid "Tendo"
 msgstr ""
 
-#: style.css:3
-msgid "https://github.com/philhoyt/wp-site-editor-theme-scaffold"
+#. Theme URI of the theme
+#: style.css
+msgid "https://github.com/philhoyt/tendo"
 msgstr ""
 
-#: style.css:4
+#. Description of the theme
+#: style.css
+msgid "Tendo is a clean and minimalist block theme built for the WordPress Site Editor. Monospaced body text is paired with bold sans-serif headings on a quiet, neutral canvas. Switch the palette from the Styles panel, pick a page template, and use the included block patterns to shape your content."
+msgstr ""
+
+#. Author of the theme
+#: style.css
 msgid "Phil Hoyt"
 msgstr ""
 
-#: style.css:5
+#. Author URI of the theme
+#: style.css
 msgid "https://philhoyt.com/"
 msgstr ""
 
-#: style.css:6
-msgid "A scaffold for creating theme with the site editor in mind."
+#: inc/setup.php:52
+msgctxt "Block pattern category"
+msgid "Tendo"
+msgstr ""
+
+#: inc/setup.php:53
+msgid "Patterns designed for the Tendo theme."
+msgstr ""
+
+#: patterns/comments.php
+msgctxt "Pattern title"
+msgid "Comments"
+msgstr ""
+
+#: patterns/comments.php
+msgctxt "Pattern description"
+msgid "Comment list with avatars, pagination, and the comment form."
+msgstr ""
+
+#: patterns/footer.php
+msgctxt "Pattern title"
+msgid "Footer"
+msgstr ""
+
+#: patterns/footer.php
+msgctxt "Pattern description"
+msgid "Social links on the left and a WordPress credit on the right."
+msgstr ""
+
+#. translators: 1: opening anchor tag, 2: closing anchor tag.
+#: patterns/footer.php:28
+#, php-format
+msgid "Proudly powered by %1$sWordPress%2$s."
+msgstr ""
+
+#: patterns/footer.php:29
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: patterns/header.php
+msgctxt "Pattern title"
+msgid "Header"
+msgstr ""
+
+#: patterns/header.php
+msgctxt "Pattern description"
+msgid "Site logo and title on the left, page navigation on the right."
+msgstr ""
+
+#: patterns/hidden-404.php
+msgctxt "Pattern title"
+msgid "404"
+msgstr ""
+
+#: patterns/hidden-404.php:13
+msgctxt "Small label above the 404 page heading"
+msgid "Error 404"
+msgstr ""
+
+#: patterns/hidden-404.php:17
+msgctxt "404 error page heading"
+msgid "Page not found"
+msgstr ""
+
+#: patterns/hidden-404.php:21
+msgctxt "404 error page body text"
+msgid "The page you are looking for doesn't exist, or it has been moved. Try searching for it instead."
+msgstr ""
+
+#: patterns/hidden-no-results.php
+msgctxt "Pattern title"
+msgid "No results"
+msgstr ""
+
+#: patterns/hidden-no-results.php:12
+msgid "No posts were found."
+msgstr ""
+
+#: patterns/hidden-post-meta.php
+msgctxt "Pattern title"
+msgid "Post meta"
+msgstr ""
+
+#: patterns/hidden-post-meta.php:14
+msgctxt "Label before the post author name"
+msgid "By:"
+msgstr ""
+
+#: patterns/hidden-post-meta.php:22
+msgctxt "Label before the post date"
+msgid "Published:"
+msgstr ""
+
+#: patterns/hidden-post-meta.php:28
+msgctxt "Label before the post categories"
+msgid "Category: "
+msgstr ""
+
+#: patterns/hidden-post-meta.php:30
+msgctxt "Label before the post tags"
+msgid "Tags: "
+msgstr ""
+
+#: patterns/hidden-search.php
+msgctxt "Pattern title"
+msgid "Search"
+msgstr ""
+
+#: patterns/hidden-search.php:11
+msgctxt "Search form label"
+msgid "Search"
+msgstr ""
+
+#: patterns/hidden-search.php:11
+msgctxt "Search input placeholder text"
+msgid "Type here…"
+msgstr ""
+
+#: patterns/hidden-search.php:11
+msgctxt "Search button text. Verb."
+msgid "Search"
+msgstr ""
+
+#: patterns/info-card.php
+msgctxt "Pattern title"
+msgid "Info card"
+msgstr ""
+
+#: patterns/info-card.php
+msgctxt "Pattern description"
+msgid "A dark, wide card with a heading, short text, an outline button, and an image on the right."
+msgstr ""
+
+#: patterns/info-card.php:18
+msgid "A short introduction"
+msgstr ""
+
+#: patterns/info-card.php:22
+msgid "Use this card to introduce yourself, a project, or a service. Keep it to a sentence or two, then point people to where they can learn more."
+msgstr ""
+
+#: patterns/info-card.php:27
+msgid "Learn more"
+msgstr ""
+
+#: patterns/links-in-bio.php
+msgctxt "Pattern title"
+msgid "Links in bio"
+msgstr ""
+
+#: patterns/links-in-bio.php
+msgctxt "Pattern description"
+msgid "A centered profile with the site logo, title, tagline, a stack of full-width buttons, and social icons."
+msgstr ""
+
+#: patterns/links-in-bio.php:24
+msgid "Listen to the playlist"
+msgstr ""
+
+#: patterns/links-in-bio.php:28
+msgid "Subscribe to the newsletter"
+msgstr ""
+
+#: patterns/links-in-bio.php:32
+msgid "Buy me a coffee"
+msgstr ""
+
+#: patterns/post-navigation.php
+msgctxt "Pattern title"
+msgid "Post navigation"
+msgstr ""
+
+#: patterns/post-navigation.php
+msgctxt "Pattern description"
+msgid "Previous and next post links above a wide rule."
+msgstr ""
+
+#: patterns/post-navigation.php:13
+#: patterns/post-navigation.php:14
+msgid "Post navigation"
+msgstr ""
+
+#: patterns/template-query-loop.php
+msgctxt "Pattern title"
+msgid "Posts list"
+msgstr ""
+
+#: patterns/template-query-loop.php
+msgctxt "Pattern description"
+msgid "A single-column list of posts with featured image, title, excerpt, and meta, separated by wide rules."
+msgstr ""
+
+#: patterns/template-query-loop.php:21
+msgctxt "Link text after the post excerpt"
+msgid "read more"
+msgstr ""
+
+#: patterns/template-query-loop.php:37
+msgctxt "Pagination link to more recent posts"
+msgid "Newer posts"
+msgstr ""
+
+#: patterns/template-query-loop.php:39
+msgctxt "Pagination link to less recent posts"
+msgid "Older posts"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Page (No Title)"
+msgstr ""
+
+#: theme.json
+#: styles/colors/chill.json
+#: styles/colors/lavender.json
+#: styles/colors/moss.json
+#: styles/colors/tangerine.json
+msgctxt "Duotone name"
+msgid "Black and white"
+msgstr ""
+
+#: theme.json
+#: styles/colors/chill.json
+#: styles/colors/lavender.json
+#: styles/colors/moss.json
+#: styles/colors/tangerine.json
+msgctxt "Duotone name"
+msgid "Secondary and tertiary"
+msgstr ""
+
+#: theme.json
+#: styles/colors/chill.json
+#: styles/colors/lavender.json
+#: styles/colors/moss.json
+#: styles/colors/tangerine.json
+msgctxt "Color name"
+msgid "Base"
+msgstr ""
+
+#: theme.json
+#: styles/colors/chill.json
+#: styles/colors/lavender.json
+#: styles/colors/moss.json
+#: styles/colors/tangerine.json
+msgctxt "Color name"
+msgid "Contrast"
+msgstr ""
+
+#: theme.json
+#: styles/colors/chill.json
+#: styles/colors/lavender.json
+#: styles/colors/moss.json
+#: styles/colors/tangerine.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr ""
+
+#: theme.json
+#: styles/colors/chill.json
+#: styles/colors/lavender.json
+#: styles/colors/moss.json
+#: styles/colors/tangerine.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr ""
+
+#: theme.json
+#: styles/colors/chill.json
+#: styles/colors/lavender.json
+#: styles/colors/moss.json
+#: styles/colors/tangerine.json
+msgctxt "Color name"
+msgid "Tertiary"
+msgstr ""
+
+#: theme.json
+msgctxt "Border radius size name"
+msgid "None"
+msgstr ""
+
+#: theme.json
+msgctxt "Border radius size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Border radius size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Border radius size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Border radius size name"
+msgid "Round"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "X-Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "X-Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Courier New"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Arial"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Base"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "X-Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "XX-Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer"
+msgstr ""
+
+#: styles/block/separator-striped.json
+msgctxt "Style variation name"
+msgid "Striped"
+msgstr ""
+
+#: styles/colors/chill.json
+msgctxt "Style variation name"
+msgid "Chill"
+msgstr ""
+
+#: styles/colors/lavender.json
+msgctxt "Style variation name"
+msgid "Lavender"
+msgstr ""
+
+#: styles/colors/moss.json
+msgctxt "Style variation name"
+msgid "Moss"
+msgstr ""
+
+#: styles/colors/tangerine.json
+msgctxt "Style variation name"
+msgid "Tangerine"
 msgstr ""

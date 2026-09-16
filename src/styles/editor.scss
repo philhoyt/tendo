@@ -2,20 +2,22 @@
 // Editor stylesheet.
 //
 
-// Set $is-editor to true, which will be inherited anywhere the tools/context module is used.
-@use 'tools/context' with (
-	$context: editor,
+// Set the context to editor so tools/context flags editor-only styles.
+@use "tools/context" with (
+	$context: editor
 );
 
 // Import base styles.
-@use 'base/global/admin-bar';
+@use "base/global/admin-bar";
 
 // Import modules.
-@use 'modules/site';
+@use "modules/site";
+@use "modules/forms";
 
-.acf-block-preview {
-	a {
-		cursor: not-allowed;
-		pointer-events: none;
-	}
+/*
+ * Link styles, mirrored from the front end so underlines match in the editor.
+ */
+a {
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: 0.15em;
 }
