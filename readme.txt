@@ -46,18 +46,17 @@ A full rebuild for the Site Editor. The default palette is now neutral; to keep 
 == Changelog ==
 
 = 2.0.0 =
-* Rebuilt on theme.json version 3 with a full set of layout, spacing, typography, and border settings.
-* Templates are now thin shells composed from translatable PHP patterns.
-* Added a neutral default palette. The original orange look is available as the Tangerine color preset.
-* Added Search, Post Navigation, Comments, and No Results patterns. Comments have a quiet heading, a single author line, and the comment text in a filled block.
-* Post lists show a comment count link when a post has comments.
-* Added the Striped separator style as a block style variation, plus Contrast section and Badge post-terms styles.
-* Added Serif, Sans, and Mono typography presets using system fonts.
-* Added Posts Grid and Keep Reading patterns; single posts now end with Keep Reading.
-* Sticky header support and a reduced-motion-aware page crossfade.
-* Styled navigation dropdowns and a full-screen contrast panel for the mobile menu, with clear submenu levels.
-* Added a compiled front-end and editor stylesheet with accessible focus states.
-* Raised the minimum requirements to WordPress 6.6 and PHP 7.4.
+* Add: Color presets Tangerine, Chill, Lavender, and Moss, and typography presets Serif, Sans, and Mono, all using system fonts.
+* Add: Posts Grid, Keep Reading, Search, Post Navigation, and No Results patterns. Single posts end with Keep Reading.
+* Add: Contrast section style for Groups and Columns, Badge style for Post Terms, and a comment count link in post lists.
+* Add: Full-screen menu panel for small screens and matching dropdown panels on desktop, with three submenu levels.
+* Add: Sticky header support and a page crossfade that respects reduced-motion settings.
+* Change: Rebuilt on theme.json version 3. Templates are thin shells composed from translatable patterns.
+* Change: The default palette is neutral. The 1.x orange look is the Tangerine preset.
+* Change: Comments show a quiet heading, one author line per comment, and the comment text in a filled block.
+* Change: Every core block is styled consistently under every color preset.
+* Change: Requires WordPress 6.6 and PHP 7.4.
+* Fix: Link and button colors meet WCAG AA contrast in every preset.
 
 = 1.6.3 =
 * Previous stable release.
