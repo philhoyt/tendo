@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 3,
-  "slug": "striped",
+  "slug": "tendo-striped",
   "title": "Striped",
   "blockTypes": ["core/separator"],
   "styles": {

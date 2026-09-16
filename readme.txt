@@ -38,6 +38,11 @@ Open the Site Editor, choose Styles, then Colors. The Tangerine, Chill, Lavender
 
 No. Tendo is a block theme and requires the Site Editor.
 
+== Upgrade Notice ==
+
+= 2.0.0 =
+A full rebuild for the Site Editor. The default palette is now neutral; to keep the orange look from 1.x, open Styles, then Colors, and choose Tangerine. Existing colors, font sizes, spacing, templates, and the striped separator keep their names, so customized sites carry over. Requires WordPress 6.6 and PHP 7.4.
+
 == Changelog ==
 
 = 2.0.0 =

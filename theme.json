@@ -940,7 +940,7 @@
         "color": {
           "text": "var(--wp--custom--rule)"
         },
-        "css": "&:not(.is-style-wide):not(.is-style-dots):not(.is-style-striped) { width: 6rem; }"
+        "css": "&:not(.is-style-wide):not(.is-style-dots):not(.is-style-tendo-striped) { width: 6rem; }"
       },
       "core/site-logo": {
         "border": {
