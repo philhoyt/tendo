@@ -1,0 +1,24 @@
+//
+// Editor stylesheet.
+//
+
+// Set the context to editor so tools/context flags editor-only styles.
+@use "tools/context" with (
+	$context: editor
+);
+
+// Import base styles.
+@use "base/global/admin-bar";
+
+// Import modules.
+@use "modules/site";
+@use "modules/forms";
+@use "modules/utilities";
+
+/*
+ * Link styles, mirrored from the front end so underlines match in the editor.
+ */
+a {
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: 0.15em;
+}

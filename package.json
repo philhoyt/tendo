@@ -1,0 +1,48 @@
+{
+  "name": "tendo",
+  "description": "Tendo is a clean and minimalist block theme built for the WordPress Site Editor.",
+  "version": "2.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philhoyt/tendo.git"
+  },
+  "scripts": {
+    "start": "wp-scripts start --experimental-modules",
+    "build": "wp-scripts build --experimental-modules",
+    "format": "wp-scripts format",
+    "format:check": "prettier --check \"**/*.{js,json,md}\"",
+    "lint:js": "wp-scripts lint-js",
+    "lint:scss": "stylelint 'src/**/*.scss' --formatter verbose",
+    "lint:scss:fix": "stylelint 'src/**/*.scss' --fix",
+    "lint:php": "composer run-script lint",
+    "lint:php:fix": "composer run-script lint-fix",
+    "packages-update": "wp-scripts packages-update",
+    "screenshot": "node bin/screenshot.js",
+    "test:smoke": "node bin/smoke.js"
+  },
+  "overrides": {
+    "@sentry/node": {
+      "minimatch": "9.0.9"
+    },
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "9.0.9"
+    },
+    "markdownlint-cli": {
+      "minimatch": "3.1.5"
+    },
+    "serialize-javascript": "7.0.5",
+    "webpack-dev-server": "5.2.3"
+  },
+  "devDependencies": {
+    "@stylistic/stylelint-plugin": "^5.3.0",
+    "puppeteer": "^25.11.0",
+    "mini-css-extract-plugin": "^2.9.4",
+    "@wordpress/dependency-extraction-webpack-plugin": "^6.55.0",
+    "@wordpress/scripts": "^35.0.0",
+    "editorconfig": "^3.0.1",
+    "prettier": "^3.0.0",
+    "sass": "^1.86.3",
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard-scss": "^17.0.0"
+  }
+}

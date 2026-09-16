@@ -1,0 +1,69 @@
+//
+// Module: site.
+//
+
+@use "../tools/context";
+
+// Header and footer template parts manage their own spacing, so the root
+// block gap must not add margin between the site's top-level regions.
+// https://github.com/WordPress/gutenberg/issues/47637
+header.wp-block-template-part,
+footer.wp-block-template-part {
+	margin-block-start: 0 !important;
+}
+
+// Sticky headers: a sticky root block inside a template part has no room to
+// travel, because the part's wrapper is exactly as tall as its content, so
+// the wrapper itself must carry the stickiness. Keyed on the class core emits
+// when Position → Sticky is chosen, so any header set to sticky just works.
+// The background is inherited down from body so content never shows through.
+header.wp-block-template-part:has(> .is-position-sticky) {
+	position: sticky;
+	inset-block-start: 0;
+	z-index: 10;
+	background-color: inherit;
+
+	body.admin-bar & {
+		inset-block-start: var(--global--admin-bar--height);
+	}
+}
+
+@include context.is(editor) {
+	// The editor forces position: relative on block wrappers.
+	header.wp-block-template-part:has(> .is-position-sticky) {
+		position: sticky !important;
+	}
+}
+
+@include context.is(front) {
+	.wp-site-blocks {
+		width: 100%;
+		background-color: inherit;
+		min-block-size: 100svh;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto 1fr auto;
+		grid-template-areas:
+			"header"
+			"main"
+			"footer";
+
+		body.admin-bar & {
+			min-block-size: calc(100svh - var(--global--admin-bar--height));
+		}
+
+		> header {
+			grid-area: header;
+			position: relative;
+			z-index: 2;
+		}
+
+		> main {
+			grid-area: main;
+		}
+
+		> footer {
+			grid-area: footer;
+		}
+	}
+}

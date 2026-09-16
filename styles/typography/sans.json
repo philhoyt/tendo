@@ -1,0 +1,88 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Sans",
+  "slug": "sans",
+  "settings": {
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+          "name": "System Sans",
+          "slug": "system-sans"
+        },
+        {
+          "fontFamily": "Arial, \"Helvetica Neue\", Helvetica, sans-serif",
+          "name": "Arial",
+          "slug": "arial-helvetica"
+        },
+        {
+          "fontFamily": "\"Courier New\", Courier, \"Lucida Sans Typewriter\", \"Lucida Typewriter\", monospace",
+          "name": "Courier New",
+          "slug": "courier-new"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-sans)",
+      "lineHeight": "1.6"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-sans)",
+          "fontWeight": "700"
+        }
+      },
+      "button": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-sans)"
+        }
+      }
+    },
+    "blocks": {
+      "core/site-title": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-sans)"
+        }
+      },
+      "core/post-title": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-sans)"
+        }
+      },
+      "core/query-title": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-sans)"
+        }
+      },
+      "core/pullquote": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-sans)"
+        }
+      },
+      "core/navigation": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-sans)"
+        }
+      },
+      "core/comment-author-name": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-sans)"
+        }
+      },
+      "core/post-navigation-link": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-sans)"
+        }
+      },
+      "core/query-pagination": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-sans)"
+        }
+      }
+    }
+  }
+}

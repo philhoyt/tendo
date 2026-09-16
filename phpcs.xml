@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<ruleset name="Tendo Coding Standards">
+    <description>A custom set of code standard rules to check for WordPress themes.</description>
+
+    <!-- What to scan -->
+    <file>.</file>
+    <exclude-pattern>/vendor/</exclude-pattern>
+    <exclude-pattern>/node_modules/</exclude-pattern>
+    <exclude-pattern>/bin/</exclude-pattern>
+
+    <!-- Exclude auto-generated asset files -->
+    <exclude-pattern>/dist/**/*.asset.php</exclude-pattern>
+
+    <!-- How to scan -->
+    <arg value="sp"/> <!-- Show sniff and progress -->
+    <arg name="basepath" value="./"/><!-- Strip the file paths down to the relevant bit -->
+    <arg name="colors"/>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="8"/><!-- Enables parallel processing when available for faster results. -->
+
+    <!-- Rules: Check PHP version compatibility -->
+    <config name="testVersion" value="7.4-"/>
+    <rule ref="PHPCompatibilityWP"/>
+
+    <!-- Rules: WordPress Coding Standards -->
+    <config name="minimum_supported_wp_version" value="6.6"/>
+    <rule ref="WordPress">
+        <exclude name="WordPress.PHP.YodaConditions.NotYoda" />
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax" />
+        <exclude name="Squiz.Commenting.VariableComment" />
+    </rule>
+
+    <!-- Allow theme-specific exceptions -->
+    <rule ref="WordPress.Files.FileName">
+        <properties>
+            <property name="is_theme" value="true"/>
+        </properties>
+    </rule>
+
+    <!-- Verify that no WP functions are used which are deprecated or have been removed -->
+    <rule ref="WordPress.WP.DeprecatedFunctions"/>
+
+    <!-- Encourage use of wp_safe_redirect() to avoid open redirect vulnerabilities -->
+    <rule ref="WordPress.Security.SafeRedirect"/>
+
+    <!-- Verify that text_domain is set to the desired text-domain -->
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="tendo"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!--
+        Enforce tabs for indentation.
+
+        `indent` is a SPACE count, not a nesting-level count; `tabIndent` only
+        controls whether the sniff emits tabs when reporting and fixing. Setting
+        indent="1" therefore declares "one indent level is one space", which makes
+        the exact check on scope openers and closers demand 1 space where a tab
+        (4 spaces) sits, reported as "expected 0 tabs, found 1" — and phpcbf
+        "fixes" it by stripping the indentation entirely.
+
+        WordPress-Core already sets indent="4" tabIndent="true" exact="false", so
+        this only restates it. Leave the value at 4.
+    -->
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="indent" value="4"/>
+            <property name="tabIndent" value="true"/>
+        </properties>
+    </rule>
+
+    <rule ref="WordPress.NamingConventions.ValidHookName">
+        <properties>
+            <property name="additionalWordDelimiters" value="-/" />
+        </properties>
+    </rule>
+
+    <rule ref="Squiz.Commenting.FunctionComment">
+        <properties>
+            <property name="skipIfInheritdoc" value="true" />
+        </properties>
+    </rule>
+
+</ruleset>

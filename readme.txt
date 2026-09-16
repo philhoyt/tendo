@@ -1,12 +1,80 @@
 === Tendo ===
-Contributors: Phil Hoyt
-Requires at least: 6.1
-Tested up to: 6.1.1
-Requires PHP: 5.6
-Stable tag: 1.1
+Contributors: philhoyt
+Requires at least: 6.6
+Tested up to: 7.1
+Requires PHP: 7.4
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog, one-column, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, block-patterns, block-styles, style-variations, template-editing, threaded-comments, translation-ready, wide-blocks
+
+Tendo is a clean and minimalist block theme built for the WordPress Site Editor.
 
 == Description ==
 
-Tendo is a Clean and Minimalist theme built for the Site Editing features included in WordPress. Take advantage of Global Style and Template editing to customize the look and feel of Tendo to meet match your own unique needs. Use block patterns to better display your content with more to come in future iterations.
+Tendo is a clean and minimalist block theme built for the WordPress Site Editor. Monospaced body text is paired with bold sans-serif headings on a quiet, neutral canvas. Switch the palette from the Styles panel, pick a page template, and use the included block patterns to shape your content.
+
+* Four color presets: Tangerine, Chill, Lavender, and Moss, on top of the neutral default.
+* Three typography presets: Serif, Sans, and Mono. System fonts only; nothing is downloaded from a third party.
+* Blank and Page (No Title) templates for landing pages.
+* Info Card, Links in Bio, Posts Grid, and Keep Reading block patterns.
+* Block styles: a striped Separator, a Contrast section style for Groups and Columns, and Badge post terms.
+* A header set to Sticky in the editor stays pinned, clear of the admin bar.
+* Translation ready. All template strings live in PHP patterns.
+
+== Installation ==
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+== Frequently Asked Questions ==
+
+= Where are the color options? =
+
+Open the Site Editor, choose Styles, then Colors. The Tangerine, Chill, Lavender, and Moss presets are listed there, and every color in the palette can also be changed by hand.
+
+= Does Tendo work with the Classic Editor? =
+
+No. Tendo is a block theme and requires the Site Editor.
+
+== Upgrade Notice ==
+
+= 2.0.0 =
+A full rebuild for the Site Editor. The default palette is now neutral; to keep the orange look from 1.x, open Styles, then Colors, and choose Tangerine. Existing colors, font sizes, spacing, templates, and the striped separator keep their names, so customized sites carry over. Requires WordPress 6.6 and PHP 7.4.
+
+== Changelog ==
+
+= 2.0.0 =
+* Rebuilt on theme.json version 3 with a full set of layout, spacing, typography, and border settings.
+* Templates are now thin shells composed from translatable PHP patterns.
+* Added a neutral default palette. The original orange look is available as the Tangerine color preset.
+* Added Search, Post Navigation, Comments, and No Results patterns. Comments have a quiet heading, a single author line, and the comment text in a filled block.
+* Post lists show a comment count link when a post has comments.
+* Added the Striped separator style as a block style variation, plus Contrast section and Badge post-terms styles.
+* Added Serif, Sans, and Mono typography presets using system fonts.
+* Added Posts Grid and Keep Reading patterns; single posts now end with Keep Reading.
+* Sticky header support and a reduced-motion-aware page crossfade.
+* Styled navigation dropdowns and a full-screen contrast panel for the mobile menu, with clear submenu levels.
+* Added a compiled front-end and editor stylesheet with accessible focus states.
+* Raised the minimum requirements to WordPress 6.6 and PHP 7.4.
+
+= 1.6.3 =
+* Previous stable release.
+
+== Copyright ==
+
+Tendo WordPress Theme, (C) 2022-2026 Phil Hoyt
+Tendo is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+Tendo bundles no third-party fonts, images, or scripts.

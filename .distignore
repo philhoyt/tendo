@@ -1,0 +1,36 @@
+# Version control and packaging
+.git
+.distignore
+.gitignore
+.gitattributes
+.github
+
+# Development tooling
+.claude
+.editorconfig
+.prettierignore
+.prettierrc.json
+.stylelintrc.json
+eslint.config.js
+phpcs.xml
+phpstan.neon
+webpack.config.js
+composer.json
+composer.lock
+package.json
+package-lock.json
+bin
+node_modules
+vendor
+src
+plans
+CLAUDE.md
+README.md
+
+# Empty JS stubs and source maps emitted next to the compiled CSS
+dist/css/*.js
+*.map
+
+# OS files
+.DS_Store
+Thumbs.db
