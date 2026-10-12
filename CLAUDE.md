@@ -128,7 +128,7 @@ This scaffold follows the **pattern-paradigm** used by Twenty Twenty-Five: templ
 User-facing strings live in `patterns/*.php` wrapped in `esc_html__()`, `esc_html_e()`, `esc_html_x()`, or `esc_attr_x()` with the `tendo` text domain. To regenerate `languages/tendo.pot`:
 
 ```bash
-wp i18n make-pot . languages/tendo.pot --include="templates,parts,patterns,inc"
+wp i18n make-pot . languages/tendo.pot --include="templates,parts,patterns,inc,functions.php,theme.json,styles" --domain=tendo
 ```
 
 The `--include` paths cover both PHP source and any patterns/templates that might pick up additional strings as the theme grows. Regenerate the pot after every version bump and commit it with the release; its `Project-Id-Version` carries the theme version.
