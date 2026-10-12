@@ -59,6 +59,18 @@ jobs:
    - name: List the zip contents
      run: unzip -l "$RUNNER_TEMP/tendo.zip"
 
+   # The Theme Directory requires stylesheets to ship as readable source. A
+   # minified file has no indented lines, however it is wrapped.
+   - name: Check the stylesheets are not minified
+     run: |
+      for f in "$RUNNER_TEMP"/stage/tendo/dist/css/*.css; do
+        n=$(grep -c '^[[:space:]]' "$f" || true)
+        echo "$f: $n indented lines"
+        if [ "$n" -lt 20 ]; then
+          echo "::error::$f looks minified"; exit 1
+        fi
+      done
+
    - uses: softprops/action-gh-release@v3
      with:
       files: ${{ runner.temp }}/tendo.zip
