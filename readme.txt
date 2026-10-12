@@ -45,6 +45,11 @@ A full rebuild for the Site Editor. The default palette is now neutral; to keep 
 
 == Changelog ==
 
+= 2.0.1 =
+* Change: The stylesheets ship as readable CSS instead of minified files, as the theme directory requires.
+* Fix: The keyboard focus ring turns white on the Contrast section, the full-screen menu and the Secondary colour, where the black ring was hard to see.
+* Fix: Removed the text domain loading call, which the theme directory handles.
+
 = 2.0.0 =
 * Add: Color presets Tangerine, Chill, Lavender, and Moss, and typography presets Serif, Sans, and Mono, all using system fonts.
 * Add: Posts Grid, Keep Reading, Search, Post Navigation, and No Results patterns. Single posts end with Keep Reading.

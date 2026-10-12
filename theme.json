@@ -73,6 +73,7 @@
         "large": "1.8"
       },
       "outline": {
+        "color": "var(--wp--preset--color--contrast)",
         "width": "2px",
         "offset": "2px",
         "style": "solid"
@@ -361,7 +362,7 @@
             "text": "var(--wp--preset--color--base)"
           },
           "outline": {
-            "color": "var(--wp--preset--color--contrast)",
+            "color": "var(--wp--custom--outline--color)",
             "offset": "var(--wp--custom--outline--offset)",
             "style": "var(--wp--custom--outline--style)",
             "width": "var(--wp--custom--outline--width)"

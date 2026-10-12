@@ -15,6 +15,7 @@ eslint.config.js
 phpcs.xml
 phpstan.neon
 webpack.config.js
+postcss.config.js
 composer.json
 composer.lock
 package.json

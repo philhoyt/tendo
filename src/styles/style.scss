@@ -7,6 +7,7 @@
 
 // Import modules.
 @use "modules/site";
+@use "modules/focus";
 @use "modules/forms";
 @use "modules/navigation";
 @use "modules/utilities";
@@ -34,7 +35,7 @@ a {
 	text-underline-offset: 0.15em;
 
 	&:focus {
-		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--contrast);
+		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--custom--outline--color);
 		outline-offset: var(--wp--custom--outline--offset);
 	}
 
@@ -43,12 +44,6 @@ a {
 	}
 }
 
-/* Focus styles */
-:where(.wp-site-blocks *:focus) {
-	outline-width: var(--wp--custom--outline--width);
-	outline-style: var(--wp--custom--outline--style);
-	outline-color: var(--wp--preset--color--contrast);
-}
 
 /*
  * Breathing room when jumping to in-page anchors such as #comments.
