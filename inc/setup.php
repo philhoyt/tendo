@@ -21,9 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return void
  */
 function setup() {
-	// Make theme available for translation.
-	load_theme_textdomain( 'tendo', get_template_directory() . '/languages' );
-
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
