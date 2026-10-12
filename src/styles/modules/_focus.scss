@@ -1,0 +1,28 @@
+//
+// Module: focus.
+//
+// The focus ring colour is --wp--custom--outline--color (theme.json), the
+// contrast colour by default. Contrast is the text colour, so the ring holds
+// on base and on the primary and tertiary colours in every preset, but it
+// vanishes on its own colour: the Contrast section style and the full-screen
+// menu overlay are contrast-coloured, and the secondary colour is too dark for
+// it in the default and Chill presets. Those surfaces switch the ring to base,
+// which holds at least 3:1 on contrast and secondary in all five presets. The
+// colour cannot be currentcolor: a focused button on a dark surface changes
+// its own text colour, and the ring sits outside the button, on the surface.
+//
+
+:where(.wp-site-blocks *:focus) {
+	outline-width: var(--wp--custom--outline--width);
+	outline-style: var(--wp--custom--outline--style);
+	outline-color: var(--wp--custom--outline--color);
+}
+
+/* stylelint-disable selector-class-pattern -- core block classes. */
+.is-style-section-contrast,
+.has-contrast-background-color,
+.has-secondary-background-color,
+.wp-block-navigation__responsive-container.is-menu-open {
+	--wp--custom--outline--color: var(--wp--preset--color--base);
+}
+/* stylelint-enable selector-class-pattern */
